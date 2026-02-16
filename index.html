@@ -1,92 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meow Gallery – Premium Cat Photos</title>
-  
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meowway – Cat Photo Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+  <!-- Top Navigation -->
   <header class="header">
-    <div class="container">
-      <a class="logo" href="#">Meow<span>Gallery</span></a>
-      <nav class="nav">
-        <a href="#" class="nav-link active">Home</a>
-        <a href="#" class="nav-link">Gallery</a>
-        <a href="#" class="nav-link">About</a>
-        <a href="#" class="nav-link">Contact</a>
-      </nav>
-      <button id="theme-toggle" class="btn btn-outline">Toggle dark</button>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <h2>Meowway</h2>
+        </div>
+        
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#" class="nav-link">Gallery</a></li>
+          <li><a href="#" class="nav-link">About</a></li>
+        </ul>
+        
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Page subtitle -->
+    <div class="page-subtitle">
+      <h1>Photo Gallery</h1>
+      <div class="subtitle-text">
+        <span>Homepage</span> | <span>Photo Gallery</span>
+      </div>
     </div>
   </header>
 
   <main class="main">
-    <section class="hero" data-aos="zoom-in">
-      <div class="container hero-content">
-        <h1>Premium Cat Photos, Curated</h1>
-        <p>Explore the world’s most adorable cats in one place.</p>
-        <button class="btn btn-primary">Browse cats</button>
+    <!-- Full-width Hero Image -->
+    <section class="hero">
+      <img src="images/hero-cat.jpg" alt="Hero cat photo" class="hero-image">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1 class="hero-title">Meowway</h1>
+          <p class="hero-subtitle">Homepage with full width gallery</p>
+        </div>
+        <div class="scroll-indicator">
+          <i class="fas fa-chevron-down"></i>
+        </div>
       </div>
     </section>
 
-    <section class="gallery-section">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Cat Gallery</h2>
-        <div class="gallery-grid">
-          
-          <a data-fslightbox="gallery" href="images/cat1.jpg" class="gallery-item" data-aos="fade-up">
-            <img src="images/cat1.jpg" alt="Fluffy cat" />
-            <div class="gallery-overlay">
-              <h3>Fluffy</h3>
-              <p>Living her best life.</p>
+    <!-- 3-Image Gallery Row -->
+    <section class="gallery">
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="images/cat1.jpg" alt="Cat 1">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Fluffy Dreams</h3>
+              <p>Perfect nap position</p>
             </div>
-          </a>
-
-          <a data-fslightbox="gallery" href="images/cat2.jpg" class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/cat2.jpg" alt="ZzzCat" />
-            <div class="gallery-overlay">
-              <h3>ZzzCat</h3>
-              <p>Professional nap taker.</p>
-            </div>
-          </a>
-
-          <a data-fslightbox="gallery" href="images/cat3.jpg" class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-            <img src="images/cat3.jpg" alt="Prince Charming" />
-            <div class="gallery-overlay">
-              <h3>Prince Charming</h3>
-              <p>Orange tabby royalty.</p>
-            </div>
-          </a>
-
           </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="images/cat2.jpg" alt="Cat 2">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Sunset Paws</h3>
+              <p>Golden hour glow</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="images/cat3.jpg" alt="Cat 3">
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Mountain Whiskers</h3>
+              <p>Adventure awaits</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Meow Gallery. All cat photos are adorable.</p>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js"></script>
-  <script>
-    // Initialize Scroll Animations
-    AOS.init({ duration: 800, once: true });
-
-    // Your Dark Mode Toggle
-    const themeToggle = document.getElementById("theme-toggle");
-    const body = document.body;
-    themeToggle.addEventListener("click", () => {
-      body.classList.toggle("dark");
-      themeToggle.textContent = body.classList.contains("dark") ? "Toggle light" : "Toggle dark";
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
