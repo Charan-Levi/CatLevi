@@ -111,17 +111,16 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  width: 100vw;           /* ← Full viewport width */
-  overflow: hidden;       /* ← Crop overflow */
-  margin-left: calc(50% - 50vw); /* ← Center perfectly */
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .hero-image {
-  width: 100vw;           /* ← Full viewport width */
-  height: 100vh;          /* ← Full viewport height */
-  object-fit: cover;      /* ← Crop to fill, no distortion */
-  object-position: center; /* ← Center crop */
-  display: block;
+  min-width: 100vw;
+  height: 100vh;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
 }
 
 
@@ -176,24 +175,23 @@ body {
 }
 
 .gallery-container {
+  display: flex;
+  gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* ← Responsive */
-  gap: 2rem;
-  width: 100%;            /* ← No overflow */
+  overflow-x: hidden; /* NO horizontal scroll */
 }
 
-
 .gallery-item {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/9;     /* ← Fixed 16:9 ratio, NO distortion */
-  height: auto;           /* ← Responsive height */
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  aspect-ratio: 3/4 !important; /* Portrait ratio for tall cats */
+  height: 500px;
   border-radius: 12px;
-  overflow: hidden;       /* ← Hide overflow */
-  cursor: pointer;
+  overflow: hidden;
+  position: relative;
 }
 
 .gallery-item:hover {
@@ -201,11 +199,11 @@ body {
 }
 
 .gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* ← Fill container perfectly */
-  object-position: center;
-  transition: transform 0.4s ease;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
 }
 
 .gallery-overlay {
@@ -237,11 +235,12 @@ body {
 /* Responsive */
 @media (max-width: 1024px) {
   .gallery-container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 1.5rem;
   }
   
   .gallery-item {
+    max-width: 100%;
     height: 400px;
   }
 }
