@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header - Thin & Minimal */
+.header {
+  padding: 40px 0 20px;
+  border-bottom: 1px solid #333;
+}
+
+.header-title {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.header-subtitle {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.header-note {
+  font-size: 0.65rem;
+  color: #666;
+  font-weight: 200;
+}
+
+/* Main Gallery Grid - Exact 3x2 Layout */
+.main {
+  padding: 60px 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  height: 600px; /* Fixed height like original */
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.02);
+}
+
+/* Winner Section - Yellow Accent */
+.winner-section {
+  background: #0a0a0a;
+  padding: 40px 0 60px;
+}
+
+.winner-content {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.winner-badge {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, #f4b400 0%, #ffeb3b 50%, #f4b400 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(244, 180, 0, 0.4);
+}
+
+.badge-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.winner-info {
+  flex: 1;
+}
+
+.winner-title {
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.winner-photographer {
+  font-size: 0.9rem;
+  color: #999;
+  font-weight: 300;
+}
+
+/* Footer */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid #333;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 500px;
+    gap: 1px;
+  }
+  
+  .winner-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .winner-badge {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .winner-title {
+    font-size: 1.8rem;
+  }
+  /* Fix for the new lightbox links */
+  .gallery-item {
+    display: block; /* Ensure the link behaves like a container */
+    text-decoration: none;
+    cursor: zoom-in;
+  }
+
+  .gallery-item:hover {
+    border: 2px solid var(--accent);
+    transform: scale(1.02);
+  }
+}
