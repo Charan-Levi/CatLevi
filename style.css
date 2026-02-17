@@ -542,14 +542,16 @@ body {
   justify-content: center;
   padding: 4rem 2rem;
   background: #0a0a0a;
+  overflow: hidden; /* Prevent off-screen content */
 }
 
 .about-hero-content {
   position: relative;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
+  margin: 0 auto; /* Center the grid */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 500px 1fr; /* Fixed image width, flexible text */
   gap: 4rem;
   align-items: center;
 }
@@ -565,15 +567,17 @@ body {
 
 .about-hero-overlay {
   padding: 2rem;
+  background: rgba(255, 0, 0, 0.1); /* Red tint to see the box */
 }
 
 .about-info-card {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.1) !important; /* More visible */
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 2px solid #667eea !important; /* Blue border */
   border-radius: 20px;
   padding: 3rem;
 }
+
 
 .about-info-card h2 {
   font-size: 3rem;
