@@ -353,6 +353,74 @@ body {
     padding: 0 0.5rem;
   }
 }
+/* ===== LIGHTBOX POPUP ===== */
+.gallery-link {
+  display: block;
+  text-decoration: none;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  animation: fadeIn 0.3s;
+}
+
+.lightbox:target {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 8px;
+  box-shadow: 0 0 60px rgba(255,255,255,0.2);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 10001;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Close on outside click */
+.lightbox > a:not(.lightbox-close) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 
 /* ===== Active Nav Indicator ===== */

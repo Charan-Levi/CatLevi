@@ -36,31 +36,32 @@
 
   <!-- Grid instead of columns -->
   <section class="gallery-masonry-section">
-    <div class="gallery-masonry">
+  <!-- Thumbnails -->
+  <div class="gallery-masonry">
+    <a href="#img1" class="gallery-link">
       <img src="images/Cat4.webp" alt="Cat 4" loading="lazy">
+    </a>
+    <a href="#img2" class="gallery-link">
       <img src="images/Cat5.webp" alt="Cat 5" loading="lazy">
-      <img src="images/Cat6.webp" alt="Cat 6" loading="lazy">
-      <img src="images/Cat7.webp" alt="Cat 7" loading="lazy">
-      <img src="images/Cat8.webp" alt="Cat 8" loading="lazy">
-      <img src="images/Cat9.webp" alt="Cat 9" loading="lazy">
-      <img src="images/Cat10.webp" alt="Cat 10" loading="lazy">
-      <img src="images/Cat11.webp" alt="Cat 11" loading="lazy">
-      <img src="images/Cat12.webp" alt="Cat 12" loading="lazy">
-      <img src="images/Cat13.webp" alt="Cat 13" loading="lazy">
-      <img src="images/Cat14.webp" alt="Cat 14" loading="lazy">
-      <img src="images/Cat15.webp" alt="Cat 15" loading="lazy">
-      <img src="images/Cat16.webp" alt="Cat 16" loading="lazy">
-      <img src="images/Cat17.webp" alt="Cat 17" loading="lazy">
-      <img src="images/Cat18.webp" alt="Cat 18" loading="lazy">
-      <img src="images/Cat19.webp" alt="Cat 19" loading="lazy">
+    </a>
+    <!-- Repeat for all cats: href="#imgN" -->
+    <a href="#img20" class="gallery-link">
       <img src="images/Cat20.webp" alt="Cat 20" loading="lazy">
-      <img src="images/Cat21.webp" alt="Cat 21" loading="lazy">
-      <img src="images/Cat22.webp" alt="Cat 22" loading="lazy">
-      <img src="images/Cat23.webp" alt="Cat 23" loading="lazy">
-      <img src="images/Cat24.webp" alt="Cat 24" loading="lazy">
-      <img src="images/Cat25.webp" alt="Cat 25" loading="lazy">
-    </div>
-  </section>
+    </a>
+  </div>
+
+  <!-- Lightbox Modals (hidden by default) -->
+  <div id="img1" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img src="images/Cat4.webp" alt="Full Cat 4">
+  </div>
+  <div id="img2" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img src="images/Cat5.webp" alt="Full Cat 5">
+  </div>
+  <!-- Repeat for all: id="imgN" + matching img src -->
+</div>
+
 </main>
 
 
