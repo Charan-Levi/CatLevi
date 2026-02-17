@@ -3,45 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cat Levi – Gallery</title>
+  <title>Cat Levi – Home</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Top Navigation -->
+  <!-- SAME HEADER -->
   <header class="header">
     <nav class="navbar">
       <div class="nav-container">
-        <div class="nav-logo">
-          <h2>Cat Levi</h2>
-        </div>
-        
+        <div class="nav-logo"><h2>Cat Levi</h2></div>
         <ul class="nav-menu">
-          <li><a href="#" class="nav-link active">Home</a></li>
-          <li><a href="#" class="nav-link">Gallery</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
           <li><a href="#" class="nav-link">About</a></li>
         </ul>
-        
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <div class="hamburger"><span></span><span></span><span></span></div>
       </div>
     </nav>
-    
-    <!-- Page subtitle -->
     <div class="page-subtitle">
-      <h1>Photo Gallery</h1>
-      <div class="subtitle-text">
-        <span>Homepage</span> | <span>Photo Gallery</span>
-      </div>
+      <h1>Featured Cats</h1>
+      <div class="subtitle-text">Hero + Top 3 Gallery</div>
     </div>
   </header>
 
   <main class="main">
-    <!-- Full-width Hero Image -->
+    <!-- KEEP HERO + 3 GALLERY IMAGES -->
     <section class="hero">
       <img src="images/Cat11.webp" alt="Hero cat" width="1920" height="1080" loading="eager">
       <div class="hero-overlay">
@@ -49,44 +37,45 @@
           <h1 class="hero-title">Cat Levi</h1>
           <p class="hero-subtitle">Homepage with Cat Levi gallery</p>
         </div>
-        <div class="scroll-indicator">
-          <i class="fas fa-chevron-down"></i>
-        </div>
+        <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
       </div>
     </section>
 
-    <!-- 3-Image Gallery Row -->
+    <!-- KEEP 3 FEATURED -->
     <section class="gallery">
       <div class="gallery-container">
         <div class="gallery-item">
           <img src="images/Cat1.webp" alt="Cat 1" width="900" height="1200" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-info">
-              <h3>Fluffy Dreams</h3>
-              <p>Perfect nap position</p>
+              <h3>Fluffy Dreams</h3><p>Perfect nap position</p>
             </div>
           </div>
         </div>
-        
         <div class="gallery-item">
           <img src="images/Cat2.webp" alt="Cat 2" width="900" height="1200" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-info">
-              <h3>Sunset Paws</h3>
-              <p>Golden hour glow</p>
+              <h3>Sunset Paws</h3><p>Golden hour glow</p>
             </div>
           </div>
         </div>
-        
         <div class="gallery-item">
           <img src="images/Cat3.webp" alt="Cat 3" width="900" height="1200" loading="lazy">
           <div class="gallery-overlay">
             <div class="gallery-info">
-              <h3>Mountain Whiskers</h3>
-              <p>Adventure awaits</p>
+              <h3>Mountain Whiskers</h3><p>Adventure awaits</p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- CTA to Full Gallery -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>More Beautiful Cats</h2>
+        <a href="gallery.html" class="btn btn-large">View All Gallery</a>
       </div>
     </section>
   </main>
