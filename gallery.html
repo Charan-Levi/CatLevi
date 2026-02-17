@@ -37,30 +37,19 @@
   <!-- Grid instead of columns -->
   <section class="gallery-masonry-section">
   <!-- Thumbnails -->
-  <div class="gallery-masonry">
-    <a href="#img1" class="gallery-link">
-      <img src="images/Cat4.webp" alt="Cat 4" loading="lazy">
-    </a>
-    <a href="#img2" class="gallery-link">
-      <img src="images/Cat5.webp" alt="Cat 5" loading="lazy">
-    </a>
-    <!-- Repeat for all cats: href="#imgN" -->
-    <a href="#img20" class="gallery-link">
-      <img src="images/Cat20.webp" alt="Cat 20" loading="lazy">
-    </a>
-  </div>
-
-  <!-- Lightbox Modals (hidden by default) -->
-  <div id="img1" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img src="images/Cat4.webp" alt="Full Cat 4">
-  </div>
-  <div id="img2" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img src="images/Cat5.webp" alt="Full Cat 5">
-  </div>
-  <!-- Repeat for all: id="imgN" + matching img src -->
+  <!-- Gallery Thumbnails (data attributes) -->
+<div class="gallery-masonry">
+  <img src="images/Cat4.webp" alt="Cat 4" data-full="images/Cat4.webp" class="gallery-thumb">
+  <img src="images/Cat5.webp" alt="Cat 5" data-full="images/Cat5.webp" class="gallery-thumb">
+  <!-- All cats: data-full="images/CatN.webp" -->
 </div>
+
+<!-- Single Modal (works for ALL photos) -->
+<div id="lightbox-modal" class="lightbox-modal">
+  <span class="close-lightbox">&times;</span>
+  <img id="lightbox-img" src="" alt="Full size">
+</div>
+
 
 </main>
 
