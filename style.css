@@ -72,6 +72,60 @@ body {
 .nav-link:hover {
   opacity: 1;
 }
+/* Mobile Menu Animation */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  transition: all 0.3s ease; /* Smooth open/close */
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile: Full screen overlay menu */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden offscreen */
+    height: 100vh;
+    width: 300px;
+    background: rgba(10,10,10,0.98);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    padding: 2rem;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .nav-menu.active {
+    right: 0 !important; /* Slide in */
+  }
+
+  .nav-link {
+    font-size: 1.5rem !important;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 10000; /* Above everything */
+  }
+}
 
 .hamburger {
   display: none;
