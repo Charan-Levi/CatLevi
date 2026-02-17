@@ -1,37 +1,50 @@
-// Bulletproof lightbox - works everywhere
-document.addEventListener('DOMContentLoaded', function() {
+// Improved Lightbox - simple & safe
+document.addEventListener('DOMContentLoaded', () => {
+
   const modal = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
   const closeBtn = document.querySelector('.close-lightbox');
-  const thumbs = document.querySelectorAll('.gallery-thumb');
 
-  // Open lightbox
-  thumbs.forEach(thumb => {
-    thumb.addEventListener('click', function() {
-      lightboxImg.src = this.dataset.full;
-      lightboxImg.alt = this.alt;
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden'; // No scroll
-    });
+  // 👉 STOP script if gallery elements are not on page
+  if (!modal || !lightboxImg || !closeBtn) return;
+
+  // Open lightbox (single listener - cleaner)
+  document.addEventListener('click', (e) => {
+    const thumb = e.target.closest('.gallery-thumb');
+    if (!thumb) return;
+
+    lightboxImg.style.opacity = "0";     // fade start
+    lightboxImg.src = thumb.dataset.full;
+    lightboxImg.alt = thumb.alt;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
   });
 
-  // Close lightbox
+  // When image loads → fade in
+  lightboxImg.onload = () => {
+    lightboxImg.style.opacity = "1";
+  };
+
+  // Close function
   function closeLightbox() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
   }
 
+  // Close button
   closeBtn.addEventListener('click', closeLightbox);
-  
-  // Close on outside click
-  modal.addEventListener('click', function(e) {
+
+  // Click outside image
+  modal.addEventListener('click', (e) => {
     if (e.target === modal) closeLightbox();
   });
 
-  // Close on ESC
-  document.addEventListener('keydown', function(e) {
+  // ESC key close
+  document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
       closeLightbox();
     }
   });
+
 });
